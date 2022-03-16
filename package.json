@@ -1,0 +1,51 @@
+{
+  "name": "aws-cdk-pipeline-example",
+  "version": "0.1.0",
+  "bin": {
+    "aws-cdk-pipeline-example": "infrastructure/app.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.93",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "cdk": "^2.16.0",
+    "esbuild": "^0.14.26",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^10.7.0",
+    "typescript": "4.6.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sesv2": "^3.54.0",
+    "@aws-sdk/client-ssm": "^3.54.0",
+    "aws-cdk-lib": "^2.16.0",
+    "constructs": "^10.0.85",
+    "source-map-support": "^0.5.21"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
